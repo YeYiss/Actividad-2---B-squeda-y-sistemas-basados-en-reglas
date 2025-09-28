@@ -1,0 +1,52 @@
+# Coordenadas (aproximadas, solo para demo A*)
+coord('Portal_Eldorado', -74.124, 4.701).
+coord('Aeropuerto_El_Dorado', -74.146, 4.701).
+coord('Museo_Nacional', -74.075, 4.617).
+coord('Corferias', -74.099, 4.635).
+coord('Calle_26_Estacion', -74.090, 4.650).
+coord('Universidades', -74.070, 4.640).
+
+# Troncales / conexiones (modo, costo ficticio, tiempo en minutos aproximado)
+edge('Portal_Eldorado','Calle_26_Estacion','tram',1.5,5).
+edge('Calle_26_Estacion','Museo_Nacional','metro',1.0,6).
+edge('Museo_Nacional','Universidades','metro',1.0,4).
+edge('Calle_26_Estacion','Corferias','metro',1.0,3).
+
+# Conexiones hacia el aeropuerto: K86 (servicio dual) y alimentadora 16-14 (representadas como edges)
+edge('Aeropuerto_El_Dorado','Portal_Eldorado','K86',2.0,12).
+edge('Portal_Eldorado','Aeropuerto_El_Dorado','16-14',1.0,10).
+
+# Algunas conexiones adicionales para opciones alternativas
+edge('Universidades','Portal_Eldorado','express',2.0,15).
+edge('Corferias','Portal_Eldorado','local',1.2,8).
+
+# Si existe un oneway específico:
+# oneway('Aeropuerto_El_Dorado','Portal_Eldorado')
+
+# Coordenadas (aproximadas)
+coord('Portal_Eldorado', -74.124, 4.701).
+coord('Avenida_Rojas_Unisalesiana', -74.120, 4.700).
+coord('El_Tiempo_CamaraComercio', -74.117, 4.698).
+coord('Salitre_El_Greco', -74.115, 4.695).
+coord('Can_British_Council', -74.113, 4.692).
+coord('Gobernacion', -74.110, 4.690).
+coord('Quinta_Paredes', -74.108, 4.688).
+coord('Corferias', -74.105, 4.685).
+coord('San_Diego', -74.098, 4.678).
+coord('Museo_Nacional', -74.075, 4.617).
+coord('Aeropuerto_El_Dorado', -74.146, 4.701).
+
+# Edges de la ruta M86 (secuencia parcial)
+edge('Portal_Eldorado','Avenida_Rojas_Unisalesiana','M86',1.0,3).
+edge('Avenida_Rojas_Unisalesiana','El_Tiempo_CamaraComercio','M86',1.0,3).
+edge('El_Tiempo_CamaraComercio','Salitre_El_Greco','M86',1.0,3).
+edge('Salitre_El_Greco','Can_British_Council','M86',1.0,3).
+edge('Can_British_Council','Gobernacion','M86',1.0,3).
+edge('Gobernacion','Quinta_Paredes','M86',1.0,3).
+edge('Quinta_Paredes','Corferias','M86',1.0,3).
+edge('Corferias','San_Diego','M86',1.0,3).
+edge('San_Diego','Museo_Nacional','M86',1.0,3).
+
+# Conexión hacia aeropuerto (como ruta alternativa)
+edge('Portal_Eldorado','Aeropuerto_El_Dorado','16-14',1.0,10).
+edge('Aeropuerto_El_Dorado','Portal_Eldorado','K86',2.0,12).
